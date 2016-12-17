@@ -1,0 +1,52 @@
+.footer-content
+	// overflow: hidden
+	margin-top: 9px
+	+pie-clearfix
+	text-align: center
+	padding-bottom: 20px
+.footer-logo
+	width: 130px
+	display: inline-block
+	
+.footer-left
+	float: left
+	width: 34px
+	overflow: hidden
+.footer-center
+	display: inline-block
+	vertical-align: top
+	text-align: center
+	
+	li 
+		display: inline-block
+		vertical-align: top
+		font-size: 12px
+		line-height: 1
+		margin: 0px 18px
+		font-family: $GP
+		font-weight: bold
+		letter-spacing: 0em
+		text-transform: uppercase
+.footer-right
+	float: right
+	margin-right: -4px
+	a 
+		margin: 0px 3px
+		display: inline-block
+		vertical-align: top
+		&:before
+			font-size: 16px
+			color: #343332
+			display: inline-block
+			vertical-align: top
+		&:last-child
+			margin-right: 0
+.twitter
+	&:before
+		+font-icon("twitter")
+.facebook
+	&:before
+		+font-icon("facebook")
+.vk
+	&:before
+		+font-icon("vk")
