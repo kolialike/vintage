@@ -22,7 +22,7 @@ jQuery(function($){
         }else {
           tlMenu
             .fromTo($(".mobile-menu"), 0.5, {autoAlpha: 0, right: -2000}, {autoAlpha: 1, right: 0}, 0.2)
-            .fromTo($("#header .language"), 0.3, {autoAlpha: 1, x: 0}, {autoAlpha: 0, x: -20}, 0.2)
+            .fromTo($("#header .language"), 0.5, {autoAlpha: 1}, {autoAlpha: 0, x: -20}, 0.2)
             .fromTo($(".mobile-menu-item .language"), 0.3, {autoAlpha: 0, x: -20}, {autoAlpha: 1, x: 0})
             .staggerFromTo($(".mobile-menu-item li"), 0.3, {autoAlpha: 0, y: -20}, {autoAlpha: 1, y: 0}, 0.2)
             .fromTo(headerSocial, 0.2, {autoAlpha: 0, x: -20}, {autoAlpha: 1, x: 0});

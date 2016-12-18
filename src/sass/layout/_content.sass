@@ -5,8 +5,7 @@
 	overflow: hidden
 	&>.wrapper
 		position: absolute
-		top: 0
-		bottom: 0
+		bottom: 40px
 		right: 0
 		left: 0
 	.banner-content-img
@@ -21,9 +20,13 @@
 			background: rgba(#fff, 0.84)
 		img
 			width: 100%
-			height: 680px
+			height: 100vh
 			display: block
 			object-fit: cover
+			+breakpoint(1023px)
+				height: 680px
+			@media screen and (max-height: 575px)
+				height: 680px
 	h2
 		display: block
 		font-size: 40px
@@ -35,6 +38,16 @@
 		text-transform: uppercase
 		margin: auto
 		margin-top: 223px
+		+breakpoint(1023px)
+			font-size: 37px
+			line-height: 49px
+		+breakpoint(767px)
+			font-size: 35px
+			line-height: 47px
+			margin-top: 190px
+		+breakpoint(500px)
+			font-size: 23px
+			line-height: 33px
 		span 
 			position: relative
 			display: inline-block
@@ -138,6 +151,9 @@
 		text-transform: uppercase
 		margin: 21px 0 22px
 		display: block
+		+breakpoint(1023px)
+			font-size: 18px
+			line-height: 24px
 		span
 			display: block
 			
@@ -180,20 +196,37 @@
 	+pie-clearfix
 	.left
 		float: left
-		width: 590px
+		width: 590/1200*100%
 		position: relative
 		z-index: 1
 		background: #f8f7f6
+		+breakpoint(767px)
+			float: none
+			display: block
+			width: 100%
+			margin-bottom: 25px
 		img 
 			margin-left: -11px
 			display: block
 			height: 600px
+			object-fit: cover
+			+breakpoint(767px)
+				margin-left: 0
+				height: 300px
+			// +breakpoint(767px)
 
 	.right
 		float: right
-		width: 610px
+		width: 610/1200*100%
 		padding: 114px 95px 20px 126px
 		+box-sizing(border-box)
+		+breakpoint(1100px)
+			padding: 70px 15px 20px 55px
+		+breakpoint(767px)
+			float: none
+			display: block
+			width: 100%
+			padding: 0
 // .my-philosophy
 
 
@@ -203,31 +236,71 @@
 	.title
 		max-width: 440px
 		margin-bottom: -8px
+		+breakpoint(767px)
+			margin-bottom: 40px
 	.project-content
 		font-size: 0
 		line-height: 0
 		display: block
-	.project-img
-		margin-bottom: 89px
-		margin-left: -19.4px
-	.project-img-item-1
-		margin-top: 130px
-	
-	.project-img-item
-		display: inline-block
-		vertical-align: top
-		text-align: center
-		margin-left: 19.4px
-		img
-			display: block
+		+breakpoint(767px)
+			text-align: center
 		.link
 			background: #fff
 			color: #a7627f
 			padding: 17px 65px 18px 27px
 			margin-top: 76px
+			margin-left: 19%
+			+breakpoint(767px)
+				margin-left: 0
+				margin-top: 0
+				clear: both
+				margin-top: 45px
 			&:hover
 				color: #fff
 				background: #bc6087
+	.project-img
+		margin-bottom: 89px
+		margin-left: -19.4/1016*100%
+		+pie-clearfix
+		+breakpoint(767px)
+			margin-left: 0
+			border-bottom: 2px solid #f8f7f5
+			margin-bottom: 45px
+			padding-bottom: 45px
+			&:nth-child(2)
+				border-bottom: 2px solid transparent
+				padding-bottom: 8px
+				
+	.project-img-item
+		// display: inline-block
+		// vertical-align: top
+
+		text-align: center
+		margin-left: 19.4/1016*100%
+		width: 366/1016*100%
+		&:nth-child(even)
+			float: left
+		&:nth-child(odd)
+			float: right
+		+breakpoint(767px)
+			float: none
+			width: 100%
+			display: block
+			margin-left: 0
+			
+		img
+			display: block
+		
+	.project-img-item-1
+		margin-top: 130px
+		+breakpoint(767px)
+			margin-top: 0
+	.project-big-img
+		width: 610/1016*100%
+		+breakpoint(767px)
+			float: none
+			display: block
+			width: 100%
 	.project-img-title
 		font-size: 13px
 		line-height: 1
@@ -280,6 +353,8 @@
 	.title
 		position: relative
 		max-width: 300px
+		+breakpoint(767px)
+			max-width: 100%
 		&:before
 			content: ""
 			position: absolute
@@ -290,16 +365,26 @@
 			background: #e8c3d2
 	.application-l
 		float: left
-		width: 366px
+		width: 366/1016*100%
 		position: relative
 		z-index: 1
 		padding-top: 60px
+		+breakpoint(767px)
+			float: none
+			display: block
+			width: 100%
+			padding-top: 0
 	.application-r
 		float: right
-		width: 610px
+		width: 610/1016*100%
 		padding: 61px 122px 90px 5px
 		+box-sizing(border-box)
 		position: relative
+		+breakpoint(767px)
+			float: none
+			display: block
+			width: 100%
+			padding: 15px 20px 50px 0px
 		&:before
 			content: ""
 			display: block
@@ -313,7 +398,17 @@
 		form 
 			position: relative
 			z-index: 1
-			
+		label
+			display: block
+			margin-top: 24px
+			p 
+				font-family: $GP
+				font-weight: 700
+				font-size: 10.98px
+				line-height: 1
+				color: #c1bfbf
+				text-transform: uppercase
+				letter-spacing: 0.1em
 		input
 			font-family: $GP
 			font-weight: 700
@@ -322,22 +417,17 @@
 			border: none
 			border-bottom: 2px solid #edece9
 			margin-top: 6px
-			padding: 20px 0px 19px
-			font-size: 10.98px
-			line-height: 1
-			color: #c1bfbf
+			padding: 0px 0px 5px
 			text-transform: uppercase
 			letter-spacing: 0.1em
-			+placeholder
-				letter-spacing: 0.1em
-				font-size: 10.98px
-				line-height: 1
-				color: #c8c6c6
-				text-transform: uppercase
-				+transition(0.3s)
-			&:focus
-				+placeholder
-					+opacity(0)
+			font-size: 10.98px
+			line-height: 1
+			color: #c8c6c6
+			text-transform: uppercase
+			+transition(0.3s)
+			// &:focus
+			// 	+placeholder
+			// 		+opacity(0)
 		input[type="submit"]
 			color: #fff
 			font-size: 16px
@@ -387,11 +477,20 @@
 		font-size: 14.02px
 		line-height: 28.03px
 	.info-l
-		width: 488px
+		width: 488/1016*100%
 		float: left
+		+breakpoint(767px)
+			float: none
+			display: block
+			width: 100%
+			margin-bottom: 10px
 	.info-r
-		width: 490px
+		width: 490/1016*100%
 		float: right
+		+breakpoint(767px)
+			float: none
+			display: block
+			width: 100%
 	.read-all
 		float: right
 		position: relative
@@ -401,6 +500,7 @@
 		font-style: italic
 		margin-top: 30px
 		+transition(opacity 0.3s)
+		clear: both
 		&:hover
 			+opacity(0.5)
 		&:after

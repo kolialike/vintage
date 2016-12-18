@@ -15,6 +15,8 @@
 	width: 155px
 	display: inline-block
 	float: left
+	+breakpoint(767px)
+		width: 100px
 	&:hover
 		img
 			+opacity(0.5)
@@ -25,12 +27,16 @@
 	position: relative
 	margin-top: 6px
 	// +opacity(1)
+	+breakpoint(767px)
+		margin-top: 0
 	a 
 		font-size: 13px
 		color: #343230
 		display: block
 		text-transform: uppercase
 		margin-bottom: 13px
+		+breakpoint(767px)
+			font-size: 12px
 		&:hover
 			color: #a7627f
 	&>a 
@@ -61,16 +67,24 @@
 		.language-item	
 			+opacity(1)
 			top: 30px
-			max-height: 500px
+			max-height: 767px
 
 .menu
 	font-size: 13px
 	color: #343230
 	float: right
 	cursor: pointer
-	margin-left: 77px
+	margin-left: 31px
 	text-transform: uppercase
 	margin-top: 5px
+	min-width: 125px
+	text-align: right
+	+breakpoint(767px)
+		font-size: 12px
+		margin-left: 0
+		margin-top: 0
+		min-width: 101px
+		// width: 120px
 	&:hover
 		p 
 			&:before
@@ -134,9 +148,11 @@
 		min-width: 320px
 		+box-sizing(border-box)
 		text-align: center
-		margin-top: 32px
+		margin-top: 33px
 		padding-bottom: 50px
 		overflow: auto
+		+breakpoint(767px)
+			margin-top: 50px
 		ul
 			margin-top: 30px
 		li 
@@ -177,6 +193,8 @@
 		display: inline-block
 		margin-top: 0
 		margin-bottom: 10px
+		+breakpoint(767px)
+			margin-top: 40px
 		a
 			display: inline-block
 			vertical-align: top
@@ -197,6 +215,11 @@
 	#header
 		text-align: center
 		padding-bottom: 15px
+		position: fixed
+		width: 100%
+		right: 0
+		left: 0
+		top: 0
 		// .language
 			// display: none
 	.menu

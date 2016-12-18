@@ -7,6 +7,8 @@
 .footer-logo
 	width: 130px
 	display: inline-block
+	+breakpoint(767px)
+		margin-bottom: 17px
 	&:hover
 		img
 			+opacity(0.5)
@@ -21,17 +23,26 @@
 	display: inline-block
 	vertical-align: top
 	text-align: center
-	
+	width: 84%
+	+breakpoint(767px)
+		width: 100%
+		display: block
+		clear: both
+	// +breakpoint(500px)
+		// width: 60%
 	li 
 		display: inline-block
 		vertical-align: top
 		font-size: 12px
 		line-height: 1
-		margin: 0px 18px
+		margin: 2px 18px 10px
 		font-family: $GP
 		font-weight: bold
 		letter-spacing: 0em
 		text-transform: uppercase
+		+breakpoint(767px)
+			display: block
+			margin: 2px 0px 10px
 .footer-right
 	float: right
 	margin-right: -4px
