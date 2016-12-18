@@ -22,6 +22,7 @@ jQuery(function($){
         }else {
           tlMenu
             .fromTo($(".mobile-menu"), 0.5, {autoAlpha: 0, right: -2000}, {autoAlpha: 1, right: 0}, 0.2)
+            .fromTo($("#header .language"), 0.3, {autoAlpha: 1, x: 0}, {autoAlpha: 0, x: -20}, 0.2)
             .fromTo($(".mobile-menu-item .language"), 0.3, {autoAlpha: 0, x: -20}, {autoAlpha: 1, x: 0})
             .staggerFromTo($(".mobile-menu-item li"), 0.3, {autoAlpha: 0, y: -20}, {autoAlpha: 1, y: 0}, 0.2)
             .fromTo(headerSocial, 0.2, {autoAlpha: 0, x: -20}, {autoAlpha: 1, x: 0});
@@ -52,5 +53,12 @@ jQuery(function($){
       .fromTo($('.mouse span'), 1.1, {autoAlpha: 1, y: 0}, {autoAlpha: 0, y: 10}, 0)
       .fromTo($('.mouse'), 0.5, {y: 10}, {y: 0}, 1)
       .fromTo($('.mouse p'), 0.5, {height: '38px'}, {height: 0}, 1.2 )
+
+
+    $(".mouse").on('click', function(event) {
+      var $mainContant = $('.banner-content'); 
+      var menuTop = $mainContant.height();
+      $("body, html").animate({scrollTop: menuTop + "px"}, 1000);
+    });
     //mouse
 });

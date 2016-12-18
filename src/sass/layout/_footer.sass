@@ -7,6 +7,11 @@
 .footer-logo
 	width: 130px
 	display: inline-block
+	&:hover
+		img
+			+opacity(0.5)
+	img
+		+transition(opacity 0.3s)
 	
 .footer-left
 	float: left
@@ -34,11 +39,15 @@
 		margin: 0px 3px
 		display: inline-block
 		vertical-align: top
+		&:hover
+			&:before
+				color: #a7627f
 		&:before
 			font-size: 16px
 			color: #343332
 			display: inline-block
 			vertical-align: top
+			+transition(color 0.3s)
 		&:last-child
 			margin-right: 0
 .twitter
